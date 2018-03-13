@@ -1,0 +1,56 @@
+.text
+{
+   width:50vw;
+   display: inline-block;
+   position: absolute;
+   top:47.5vh;
+   opacity:.8;
+   z-index:5;
+}
+
+.text a
+{    
+    color:black;
+    font-size: 5vh;
+    top:5vh;
+}
+
+.column
+{
+    width:50vw;
+    padding:0;
+    display: inline-block;
+}
+
+.column.photography
+{
+    object-position: center;
+}
+
+body
+{
+    overflow-y: hidden;
+}
+
+@media all and (orientation:portrait)
+{
+    .column
+    {
+        width:100vw;
+        height: 50vh;
+        margin:0;
+        margin-top: -5.6vh;
+    }
+
+    .text
+    {
+        width:100vw;
+        position: relative;
+        top:22.5vh;
+    }
+
+    .column.photography
+    {
+        margin-top: -6.3vh;
+    }
+}
