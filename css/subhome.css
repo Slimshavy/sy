@@ -37,4 +37,17 @@ body
 {
     text-align: center;
     width:200px;
+    display: inline-block;
+}
+
+.btn:first-of-type
+{
+    margin-right: 100px;
+}
+
+.buttons
+{
+    margin: 0 auto 0 auto;
+    display: block;
+    width:500px;
 }

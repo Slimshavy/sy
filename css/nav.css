@@ -1,0 +1,21 @@
+.logo nav, .logo a
+{
+    display: inline-block;
+}
+.logo
+{
+    width:542px;
+}
+.logo a
+{
+    width:65px;
+    color: black;
+}
+.logo a:first-of-type
+{
+    margin-right: 20px;
+}
+.logo a:last-of-type
+{
+    margin-left: 20px;
+}
