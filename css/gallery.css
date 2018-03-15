@@ -1,0 +1,46 @@
+body
+{
+    width:100vw;
+}
+
+.gallery
+{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.gallery-row
+{
+    height: 300px;
+    font-size: 0px;
+}
+
+.gallery-row a
+{
+    font-size: 16px;
+}
+
+.gallery-row img
+{
+    height: 100%;
+    width:34%;
+    vertical-align: middle;
+}
+
+.gallery-row .text
+{
+    width:15%;
+    display: inline-block;
+}
+
+.gallery-row .text:first-of-type
+{
+    text-align: right;
+    margin-right: 1%;
+}
+
+.gallery-row .text:last-of-type
+{
+    text-align: left;
+    margin-left: 1%;
+}

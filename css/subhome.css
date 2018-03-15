@@ -40,14 +40,44 @@ body
     display: inline-block;
 }
 
-.btn:first-of-type
-{
-    margin-right: 100px;
-}
-
 .buttons
 {
     margin: 0 auto 0 auto;
     display: block;
     width:500px;
+}
+
+.btn:first-of-type
+{
+    margin-right: 100px;
+}
+
+.btn-outline-info {
+    border: 2px solid #79ff61;
+    font-weight: 600;
+    color: #79ff61;
+}
+
+.btn-info {
+    background-color: #79ff61;
+    border-color: #74ff14;
+}
+
+@media (max-width:600px)
+{
+    .buttons
+    {
+        width:100%;
+    }
+    
+    .btn {
+        margin: 4vw auto;
+        display: block;
+        width: 246px;
+    }
+
+    .btn:first-of-type
+    {
+        margin-right: auto;
+    }
 }

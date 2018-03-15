@@ -44,6 +44,7 @@ footer
 .main
 {
     margin-top: -21vh;
+    font-size: 0;
 }
 
 a, .logo

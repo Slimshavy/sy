@@ -39,7 +39,7 @@ body
         width:100vw;
         height: 50vh;
         margin:0;
-        margin-top: -5.6vh;
+        margin-top: -5.7vh;
     }
 
     .text
@@ -47,10 +47,5 @@ body
         width:100vw;
         position: relative;
         top:22.5vh;
-    }
-
-    .column.photography
-    {
-        margin-top: -6.3vh;
     }
 }
