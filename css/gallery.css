@@ -44,3 +44,75 @@ body
     text-align: left;
     margin-left: 1%;
 }
+
+.sub .gallery-row img:first-of-type
+{
+    margin-right:0.3%;
+}
+
+.sub .gallery-row img:last-of-type
+{
+    margin-left: 0.3%;
+}
+
+.sub img
+{
+    width:49.4%;
+    object-fit: cover
+}
+
+.sub .gallery-row
+{
+    margin-bottom: 0.5%;
+    height: 400px;
+}
+
+@media (max-width:1000px)
+{
+    .gallery
+    {
+        width: 800px;
+    }
+}
+
+@media (max-width:800px)
+{
+    .gallery
+    {
+        width: 600px;
+    }
+}
+
+@media (max-width:600px)
+{
+    .gallery
+    {
+        width: 80vw;
+    }
+    .sub img
+    {
+        width:99.4%;
+    }
+
+    .gallery-row img
+    {
+        display: inherit;
+        height: 50%;
+        margin:0 auto 0.3% auto; 
+    }
+
+    .sub .gallery-row img:first-of-type
+    {
+        margin-right:auto;
+    }
+    
+    .sub .gallery-row img:last-of-type
+    {
+        margin-left: auto;
+    }
+
+    .sub .gallery-row
+    {
+        height: 500px;
+    }
+}
