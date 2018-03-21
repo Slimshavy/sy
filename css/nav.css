@@ -19,3 +19,68 @@
 {
     margin-left: 20px;
 }
+
+.glyphicon-menu-hamburger
+{
+    display: none;
+}
+
+@media (max-width:550px)
+{
+    .logo a:first-of-type
+    {
+        margin-right: 0;
+    }
+    .logo a:last-of-type
+    {
+        margin-left: 0;
+    }
+
+    .logo nav
+    {
+        width: 100%;
+        top: 145%;
+        position: relative;
+        display: none;
+    }
+
+    .logo nav a
+    {
+        text-align: center;
+        padding: 5%;
+        width:100%;
+        background: white;
+        border-top: black solid 1px;
+    }
+
+    .logo img
+    {
+        position: absolute;
+        left:35%;
+        top:10%;
+    }
+
+    .logo
+    {
+        width:100%;
+        margin:auto;
+    }
+
+    .logo nav:last-of-type
+    {
+        margin-top: -7%;
+        border-bottom: black solid 1px;
+    }
+
+    .glyphicon-menu-hamburger
+    {
+        display: block;
+        left:15%;
+        position: absolute;
+        font-size: 260%;
+        top: 45%;
+        border: darkgray solid 1px;
+        padding: 5px 2px 4px 2px;
+        border-radius: 6px;
+    }
+}

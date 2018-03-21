@@ -7,8 +7,9 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
     <title>Gallery - Shavy Yarmush</title>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/site.min.css">
-    <link rel="stylesheet" href="/css/nav.min.css">
+    <link rel="stylesheet" href="/css/nav.css">
     <link rel="stylesheet" href="/css/gallery.css">
 </head>
 <body>
@@ -18,6 +19,7 @@
             <a href="/photography/about">ABOUT</a>
         </nav>
         <a href="/" style="width:122px;vertical-align:middle;"><img src="/images/logo.png" /></a>
+        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true" onclick="$('.logo nav').toggle();"></span>
         <nav>
             <a href="/photography/pricing">PRICING</a>
             <a href="/photography/contact">CONTACT</a>
@@ -27,14 +29,18 @@
     <div class="gallery main">
         <div class="gallery-row">
             <a href="#" onclick="return showSection('mitzvah');" class="text">BAR/BAS MITZVAH</a>
-            <a href="#" onclick="return showSection('mitzvah');"><img src="/images/code.jpg"></a>
-            <a href="#" onclick="return showSection('newborn');"><img src="/images/code.jpg"></a>
+            <a href="#" onclick="return showSection('mitzvah');" class="img img1">
+                <img src="/images/code.jpg"></a>
+            <a href="#" onclick="return showSection('newborn');" class="img img2">
+                <img src="/images/code.jpg"></a>
             <a href="#" onclick="return showSection('newborn');" class="text">NEWBORN</a>
         </div>
         <div class="gallery-row">
             <a href="#" onclick="return showSection('family');" class="text">FAMILY</a>
-            <a href="#" onclick="return showSection('family');"><img src="/images/code.jpg"></a>
-            <a href="#" onclick="return showSection('shots');"><img src="/images/code.jpg"></a>
+            <a href="#" onclick="return showSection('family');" class="img img1">
+                <img src="/images/code.jpg"></a>
+            <a href="#" onclick="return showSection('shots');" class="img img2">
+                <img src="/images/code.jpg"></a>
             <a href="#" onclick="return showSection('shots');" class="text">HEADSHOTS</a>
         </div>
     </div>
@@ -83,6 +89,7 @@
         <p>&copy; 2018 - Shavy Yarmush</p>
     </footer>
 
+    
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script>
         function getParameterByName(name, url) {
@@ -99,6 +106,11 @@
         {
             $('.sub').hide();
             $('.main').show();
+
+            if($( window ).width()<550)
+            {
+            $('.logo nav').hide();
+            }
         }
 
         function showSection(section)

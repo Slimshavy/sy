@@ -11,7 +11,7 @@ body
 
 .gallery-row
 {
-    height: 300px;
+    height: 400px;
     font-size: 0px;
 }
 
@@ -64,7 +64,6 @@ body
 .sub .gallery-row
 {
     margin-bottom: 0.5%;
-    height: 400px;
 }
 
 @media (max-width:1000px)
@@ -72,6 +71,11 @@ body
     .gallery
     {
         width: 800px;
+    }
+
+    .gallery-row
+    {
+        height: 375px;
     }
 }
 
@@ -81,24 +85,31 @@ body
     {
         width: 600px;
     }
+
+    .gallery-row
+    {
+        height: 275px;
+    }
 }
 
 @media (max-width:600px)
 {
     .gallery
     {
-        width: 80vw;
-    }
-    .sub img
-    {
-        width:99.4%;
+        width: 90vw;
     }
 
     .gallery-row img
     {
         display: inherit;
         height: 50%;
-        margin:0 auto 0.3% auto; 
+        margin:0 auto; 
+    }
+
+    .sub img
+    {
+        width:99.4%;
+        margin:0 auto 0.3% auto;
     }
 
     .sub .gallery-row img:first-of-type
@@ -114,5 +125,23 @@ body
     .sub .gallery-row
     {
         height: 500px;
+    }
+
+    .main img
+    {
+        width:60%;
+    }
+
+    .main .text
+    {
+        width: 39%;
+    }
+}
+
+@media (max-width:550px)
+{
+    .gallery
+    {
+        margin-top:50px;
     }
 }
