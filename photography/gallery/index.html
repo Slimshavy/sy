@@ -9,82 +9,83 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/site.min.css">
-    <link rel="stylesheet" href="/css/nav.css">
-    <link rel="stylesheet" href="/css/gallery.css">
+    <link rel="stylesheet" href="/css/nav.min.css">
+    <link rel="stylesheet" href="/css/gallery.min.css">
 </head>
 <body>
-    <div class="logo">
+    <header>
         <nav>
             <a href="#" onclick="showMain(); return false;">GALLERY</a>
             <a href="/photography/about">ABOUT</a>
         </nav>
         <a href="/" style="width:122px;vertical-align:middle;"><img src="/images/logo.png" /></a>
-        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true" onclick="$('.logo nav').toggle();"></span>
+        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true" onclick="$('nav').toggleClass('hidden');"></span>
         <nav>
             <a href="/photography/pricing">PRICING</a>
             <a href="/photography/contact">CONTACT</a>
         </nav>
-    </div>
+    </header>
 
-    <div class="gallery main">
-        <div class="gallery-row">
-            <a href="#" onclick="return showSection('mitzvah');" class="text">BAR/BAS MITZVAH</a>
-            <a href="#" onclick="return showSection('mitzvah');" class="img img1">
-                <img src="/images/code.jpg"></a>
-            <a href="#" onclick="return showSection('newborn');" class="img img2">
-                <img src="/images/code.jpg"></a>
-            <a href="#" onclick="return showSection('newborn');" class="text">NEWBORN</a>
+    <main>
+        <div class="gallery main">
+            <div class="gallery-row">
+                <a href="#" onclick="return showSection('mitzvah');" class="text">BAR/BAS MITZVAH</a>
+                <a href="#" onclick="return showSection('mitzvah');" class="img img1">
+                    <img src="images/bbm25.jpg"></a>
+                <a href="#" onclick="return showSection('newborn');" class="img img2">
+                    <img src="images/nb1.jpg"></a>
+                <a href="#" onclick="return showSection('newborn');" class="text">NEWBORN</a>
+            </div>
+            <div class="gallery-row">
+                <a href="#" onclick="return showSection('family');" class="text">FAMILY</a>
+                <a href="#" onclick="return showSection('family');" class="img img1">
+                    <img src="images/fp13.jpg"></a>
+                <a href="#" onclick="return showSection('shots');" class="img img2">
+                    <img src="images/hs1.jpg" style="object-position:50% 30%;"></a>
+                <a href="#" onclick="return showSection('shots');" class="text">HEADSHOTS</a>
+            </div>
         </div>
-        <div class="gallery-row">
-            <a href="#" onclick="return showSection('family');" class="text">FAMILY</a>
-            <a href="#" onclick="return showSection('family');" class="img img1">
-                <img src="/images/code.jpg"></a>
-            <a href="#" onclick="return showSection('shots');" class="img img2">
-                <img src="/images/code.jpg"></a>
-            <a href="#" onclick="return showSection('shots');" class="text">HEADSHOTS</a>
-        </div>
-    </div>
 
-    <div id="mitzvah" class="gallery sub">
-        <div class="gallery-row">
-            <img src="images/bbm1.jpg">
-            <img src="images/bbm2.jpg">
+        <div id="mitzvah" class="gallery sub">
+            <div class="gallery-row">
+                <img src="images/bbm1.jpg">
+                <img src="images/bbm2.jpg">
+            </div>
+            <div class="gallery-row">
+                <img src="images/bbm3.jpg">
+                <img src="images/bbm4.jpg">
+            </div>
         </div>
-        <div class="gallery-row">
-            <img src="images/bbm3.jpg">
-            <img src="images/bbm4.jpg">
-        </div>
-    </div>
 
-    <div id="newborn" class="gallery sub">
-        <div class="gallery-row">
-            <img src="images/nb1.jpg">
-            <img src="images/nb2.jpg">
+        <div id="newborn" class="gallery sub">
+            <div class="gallery-row">
+                <img src="images/nb1.jpg">
+                <img src="images/nb2.jpg">
+            </div>
         </div>
-    </div>
 
-    <div id="family" class="gallery sub">
-        <div class="gallery-row">
-            <img src="images/fp1.jpg">
-            <img src="images/fp2.jpg">
+        <div id="family" class="gallery sub">
+            <div class="gallery-row">
+                <img src="images/fp1.jpg">
+                <img src="images/fp2.jpg">
+            </div>
+            <div class="gallery-row">
+                <img src="images/fp3.jpg">
+                <img src="images/fp4.jpg">
+            </div>
         </div>
-        <div class="gallery-row">
-            <img src="images/fp3.jpg">
-            <img src="images/fp4.jpg">
-        </div>
-    </div>
 
-    <div id="shots" class="gallery sub">
-        <div class="gallery-row">
-            <img src="images/hs1.jpg">
-            <img src="images/hs2.jpg">
+        <div id="shots" class="gallery sub">
+            <div class="gallery-row">
+                <img src="images/hs1.jpg">
+                <img src="images/hs2.jpg">
+            </div>
+            <div class="gallery-row">
+                <img src="images/hs3.jpg">
+                <img src="images/hs4.jpg">
+            </div>
         </div>
-        <div class="gallery-row">
-            <img src="images/hs3.jpg">
-            <img src="images/hs4.jpg">
-        </div>
-    </div>
-
+    </main>
     <footer>
         <p>&copy; 2018 - Shavy Yarmush</p>
     </footer>
@@ -109,7 +110,7 @@
 
             if($( window ).width()<550)
             {
-            $('.logo nav').hide();
+                $('nav').addClass('hidden');
             }
         }
 

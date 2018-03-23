@@ -21,16 +21,7 @@ footer
     margin-top:-40px;
 }
 
-.text
-{
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0 auto 0 auto;
-    padding: 0;
-    color:black;
-}
-
-.logo
+header
 {
     font-family: Arial, Helvetica, sans-serif;
     margin: 1vh;
@@ -43,12 +34,35 @@ footer
 
 .main
 {
-    margin-top: -21vh;
+    margin-top: -17vh;
     font-size: 0;
 }
 
-a, .logo
+.text
+{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto 0 auto;
+    padding: 0;
+    color:black;
+    font-size: 16px;
+}
+
+h2.text
+{
+    font-size: 26px;
+}
+
+a, header
 {    
     text-decoration: none;
     z-index:56;
+}
+
+@media (max-width:550px)
+{
+    header img, header
+    {
+        width:75px;
+    }
 }
