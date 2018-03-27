@@ -30,7 +30,7 @@ header a:last-of-type
     display: none;
 }
 
-@media (max-width:550px)
+@media (max-width:549px)
 {
     nav a:first-of-type, nav a:last-of-type
     {

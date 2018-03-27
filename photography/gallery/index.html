@@ -25,65 +25,69 @@
             <a href="/photography/contact">CONTACT</a>
         </nav>
     </header>
-
     <main>
         <div class="gallery main">
-            <div class="gallery-row">
-                <a href="#" onclick="return showSection('mitzvah');" class="text">BAR/BAS MITZVAH</a>
-                <a href="#" onclick="return showSection('mitzvah');" class="img img1">
-                    <img src="images/bbm25.jpg"></a>
-                <a href="#" onclick="return showSection('newborn');" class="img img2">
-                    <img src="images/nb1.jpg"></a>
-                <a href="#" onclick="return showSection('newborn');" class="text">NEWBORN</a>
+            <div style="background-image: url('images/bbm25.jpg')"
+                onclick="showSection('mitzvah');" class="left p30">
+                <div>
+                    <h3>BAR/BAS MITZVAH</h3>
+                        <hr>
+                    <h3>Gallery</h3>
+                </div>
             </div>
-            <div class="gallery-row">
-                <a href="#" onclick="return showSection('family');" class="text">FAMILY</a>
-                <a href="#" onclick="return showSection('family');" class="img img1">
-                    <img src="images/fp13.jpg"></a>
-                <a href="#" onclick="return showSection('shots');" class="img img2">
-                    <img src="images/hs1.jpg" style="object-position:50% 30%;"></a>
-                <a href="#" onclick="return showSection('shots');" class="text">HEADSHOTS</a>
+    
+            <div style="background-image: url('images/nb1.jpg')"
+                onclick="showSection('newborn');" class="p20">
+                <div>
+                    <h3>NEWBORN</h3>
+                    <hr>
+                    <h3>Gallery</h3>
+                </div>
+            </div>
+    
+            <div style="background-image: url('images/fp13.jpg')"
+                onclick="showSection('family');" class="left">
+                <div>
+                    <h3>FAMILY PORTAITS</h3>
+                    <hr>
+                    <h3>Gallery</h3>
+                </div>
+            </div>
+    
+            <div style="background-image: url('images/hs1.jpg')"
+                onclick="showSection('shots');" class="p20">
+                <div>
+                    <h3>HEADSHOTS</h3>
+                    <hr>
+                    <h3>Gallery</h3>
+                </div>
             </div>
         </div>
 
         <div id="mitzvah" class="gallery sub">
-            <div class="gallery-row">
-                <img src="images/bbm1.jpg">
-                <img src="images/bbm2.jpg">
-            </div>
-            <div class="gallery-row">
-                <img src="images/bbm3.jpg">
-                <img src="images/bbm4.jpg">
-            </div>
+            <div class="left"><img src="images/bbm1.jpg"></div>
+            <div><img src="images/bbm2.jpg"></div>
+            <div class="left"><img src="images/bbm3.jpg"></div>
+            <div><img src="images/bbm4.jpg"></div>
         </div>
 
         <div id="newborn" class="gallery sub">
-            <div class="gallery-row">
-                <img src="images/nb1.jpg">
-                <img src="images/nb2.jpg">
-            </div>
+            <div class="left"><img src="images/nb1.jpg"></div>
+            <div><img src="images/nb2.jpg"></div>
         </div>
 
         <div id="family" class="gallery sub">
-            <div class="gallery-row">
-                <img src="images/fp1.jpg">
-                <img src="images/fp2.jpg">
-            </div>
-            <div class="gallery-row">
-                <img src="images/fp3.jpg">
-                <img src="images/fp4.jpg">
-            </div>
+            <div class="left"><img class="p35" src="images/fp1.jpg"></div>
+            <div><img src="images/fp2.jpg"></div>
+            <div class="left"><img src="images/fp3.jpg"></div>
+            <div><img src="images/fp4.jpg"></div>
         </div>
 
         <div id="shots" class="gallery sub">
-            <div class="gallery-row">
-                <img src="images/hs1.jpg">
-                <img src="images/hs2.jpg">
-            </div>
-            <div class="gallery-row">
-                <img src="images/hs3.jpg">
-                <img src="images/hs4.jpg">
-            </div>
+            <div class="left"><img class="p20" src="images/hs1.jpg"></div>
+            <div><img src="images/hs2.jpg"></div>
+            <div class="left"><img class="p20" src="images/hs3.jpg"></div>
+            <div><img class="p30" src="images/hs4.jpg"></div>
         </div>
     </main>
     <footer>
@@ -103,12 +107,22 @@
             return decodeURIComponent(results[2].replace(/\+/g, " "));
         }
 
+        var currentState = "";
         function showMain()
         {
+            history.pushState( {gal:currentState}, null, "/photography/gallery");
+            showMainSection();
+
+            return false;
+        }
+
+        function showMainSection()
+        {
+            currentState = "main";
             $('.sub').hide();
             $('.main').show();
-
-            if($( window ).width()<550)
+            
+            if(window.matchMedia('(max-width: 550px)').matches)
             {
                 $('nav').addClass('hidden');
             }
@@ -116,21 +130,49 @@
 
         function showSection(section)
         {
+            history.pushState( {gal:currentState}, null, "/photography/gallery#" + section);
+            showSpecifiedSection(section);
+            return false;
+        }
+
+        function showSpecifiedSection(section)
+        {
+            currentState = section;
             $('.sub, .main').hide();
             $('#' + section).show();
         }
 
-        $(function() {
+        $( window ).resize(function() 
+        {
+            if(window.matchMedia('(max-width: 550px)').matches)
+            {
+                $('nav').addClass('hidden');
+            }
+        });
+
+        $(function()
+        {
             if(window.location.hash)
             {
                 $('.sub, .main').hide();
                 $(window.location.hash).show();
+                currentState = window.location.hash.substr(1);
+                    
+                if(window.matchMedia('(max-width: 550px)').matches)
+                {
+                    $('nav').addClass('hidden');
+                }
             }
             else
             {
-                showMain();
+                showMainSection();
             }
         });
+
+        window.onpopstate = function (event) 
+        {  
+            showMainSection();
+        }
     </script>
 </body>
 </html>
